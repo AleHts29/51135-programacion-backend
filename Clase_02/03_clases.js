@@ -15,7 +15,7 @@ class Auto {
     }
 }
 
-
+// Prueba
 
 // instaciamos la clase 
 const auto1 = new Auto("negro", "Peugeot")
