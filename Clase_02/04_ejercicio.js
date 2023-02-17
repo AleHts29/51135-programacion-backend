@@ -44,3 +44,8 @@ objetos.forEach(objeto => {
 
 console.log(newArray);
 console.log(totalCantProductos)
+
+
+
+
+
