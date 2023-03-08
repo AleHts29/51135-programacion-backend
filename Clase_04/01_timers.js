@@ -11,7 +11,7 @@ const temporizador = (callback) => {
 // console.log("Iniciando tarea con timeout!");
 // temporizador(operacion);
 
-
+let array = []
 
 
 // SetInterval
