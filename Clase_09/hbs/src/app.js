@@ -6,7 +6,7 @@ import viewRouter from './routes/views.router.js'
 
 // Delcaramos exp
 const app = express()
-const PORT = 9090
+const PORT = 8080
 //Preparar la configuracion del servidor para recibir objetos JSON.
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -15,6 +15,10 @@ app.use(express.urlencoded({extended: true}));
 app.engine('handlebars', handlebars.engine());
 app.set('views', __dirname + "/views/");
 app.set('view engine', 'handlebars');
+
+
+//Carpeta public
+app.use(express.static(__dirname+'/public/'));
 
 // app.get('/hello', (req, res)=>{
 //     // usuario de prueba
