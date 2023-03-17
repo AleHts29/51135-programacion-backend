@@ -15,6 +15,14 @@ app.use(express.static(__dirname + '/src/public'))
 const PORT = 9090
 
 
+// // middleware
+// app.use(function (request, response, next) {
+//     console.log("Mi propio middleware.");
+//     console.log("Time: " + Date().toLocaleString());
+//     next();
+// });
+
+
 
 app.use('/api/user', usersRoutes)
 app.use('/api/pet', petsRoutes)

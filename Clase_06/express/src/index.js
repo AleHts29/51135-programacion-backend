@@ -8,7 +8,8 @@ app.get('/saludo', (req, res) => {
     res.send({ nombre: 'Juan' })
 })
 
-
+//  req.query
+app.use(express.urlencoded({ extended: true }));
 
 
 /*
@@ -47,10 +48,10 @@ app.get('/usuario2/:nombre/:apellido', (request, response) => {
  */
 
 const usuarios = [
-    { id: "1", nomnbre: "Juan", apellido: "Torres", edad: "X", genero: "M" },
-    { id: "2", nomnbre: "Carlos", apellido: "Garcia", edad: "20", genero: "M" },
-    { id: "3", nomnbre: "Maria", apellido: "Torres", edad: "15", genero: "F" },
-    { id: "4", nomnbre: "Patricia", apellido: "Ramirez", edad: "30", genero: "F" }
+    { id: 1, nomnbre: "Juan", apellido: "Torres", edad: "X", genero: "M" },
+    { id: 2, nomnbre: "Carlos", apellido: "Garcia", edad: "20", genero: "M" },
+    { id: 3, nomnbre: "Maria", apellido: "Torres", edad: "15", genero: "F" },
+    { id: 4, nomnbre: "Patricia", apellido: "Ramirez", edad: "30", genero: "F" }
 ];
 
 app.get('/', (req, res) => {
@@ -58,17 +59,19 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:userId', (req, res) => {
+    let {userId} = req.params
+    console.log(typeof(req.params.userId))
+
     // hacemos una busqueda
-    const usuario = usuarios.find(u => u.id === req.params.userId);
+    const usuario = usuarios.find(u => u.id === parseInt(userId));
     if (usuario) {
-        res.send(usuario)
+        res.json({usuario})
     }
     res.send({ messasge: "Usuario no encontrado!!" })
 })
 
 
-//  req.query
-app.use(express.urlencoded({ extended: true }));
+
 const consultas = []
 app.get('/ejemploQueries/query', (request, response) => {
     let { nombre, apellido, edad } = request.query;

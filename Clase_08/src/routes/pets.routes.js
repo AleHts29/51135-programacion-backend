@@ -51,7 +51,7 @@ function miMiddleware(request, response, next) {
 /**
  * Metodo GET por default:
  */
-router.get('/', miMiddleware, (request, response) => {
+router.get('/middleware', miMiddleware, (request, response) => {
     console.log("Consumiendo api GET /api/pets..");
     console.log("Mascotas actuales: ");
     console.log(pets);
