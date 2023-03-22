@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+// import fs from 'fs'
 
 /**
  * Hands on Lab clase4:
