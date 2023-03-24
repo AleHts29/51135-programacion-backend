@@ -1,0 +1,17 @@
+<div>
+    <h1>Bienvenido al chat de camada-51135</h1>
+    
+    <div>
+        <p> Escribe un mensaje en nuestro ChatBox: <input id="chatBox" type="text"></p>
+    </div>
+
+
+    {{!-- renderizado de los mensajes --}}
+    <div>
+        <p id="messageLogs"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/messages.js"></script>
