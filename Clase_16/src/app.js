@@ -65,14 +65,14 @@ await mongoose.connect('mongodb://localhost:27017/colegio?retryWrites=true&w=maj
 
 
     // Creamos la conxion/referencia 
-    let student = await studentsModel.findOne({_id:"6438938546c8206ec6c62fe4"});
-    console.log(student);
+    let student = await studentsModel.findOne({_id:"643884083f2017a505238f61"})
+    console.log(JSON.stringify(student, null, '\t'))
 
-    student.courses.push({course:"64389541fb7fc42701a8f20b"})
-    console.log(JSON.stringify(student, null, '\t'));
+    // student.courses.push({course:"64389541fb7fc42701a8f20b"})
+    // console.log(JSON.stringify(student, null, '\t'));
 
-    let result = await studentsModel.updateOne({_id:"6438938546c8206ec6c62fe4"}, student )
-    console.log(result);
+    // let result = await studentsModel.updateOne({_id:"6438938546c8206ec6c62fe4"}, student )
+    // console.log(result);
 
 
 
