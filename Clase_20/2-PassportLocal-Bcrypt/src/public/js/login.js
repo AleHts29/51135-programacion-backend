@@ -16,6 +16,8 @@ form.addEventListener('submit',e=>{
         if(result.status===200){
             console.log(obj)
             window.location.replace('/users');
+        }else if(result.status ===401){
+            alert("Login invalido!!")
         }
     })
 })
