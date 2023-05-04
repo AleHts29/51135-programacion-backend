@@ -1,6 +1,7 @@
 import {fileURLToPath} from 'url';
 import { dirname } from 'path';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 
 const __filename = fileURLToPath(import.meta.url);

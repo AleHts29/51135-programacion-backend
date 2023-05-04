@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import passport from 'passport';
+import { generateJWToken } from '../utils.js';
+
 
 const router = Router();
 
@@ -29,12 +31,16 @@ router.post("/login", passport.authenticate('login', { failureRedirect: '/api/se
     const user = req.user;
     console.log(user);
     if (!user) return res.status(401).send({ status: "error", error: "El usuario y la contraseña no coinciden!" });
-    req.session.user = {
-        name: `${user.first_name} ${user.last_name}`,
-        email: user.email,
-        age: user.age
-    }
-    res.send({ status: "success", payload: req.session.user, message: "¡Primer logueo realizado! :)" });
+    // req.session.user = {
+    //     name: `${user.first_name} ${user.last_name}`,
+    //     email: user.email,
+    //     age: user.age
+    // }
+
+    const access_token = generateJWToken(user);
+    console.log(access_token);
+    // res.send({ status: "success", payload: req.session.user, message: "¡Primer logueo realizado! :)" });
+    res.send({access_token: access_token});
 });
 
 router.get("/fail-register", (req, res) => {
