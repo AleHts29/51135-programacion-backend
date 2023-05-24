@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISTA</title>
+    <!-- Importando bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-3">
+        <!-- Formulario -->
+<div class="jumbotron">
+    <h1 style="color:blue;">Ingrese Producto</h1>
+    <br>
+    <form action="/productos" method="post">
+        <div class="form-group">
+            <label for="nombre"><b>Nombre</b></label>
+            <input id="nombre" class="form-control" type="text" name="nombre" onchange="">
+        </div>
+        <div class="form-group">
+            <label for="descripcion"><b>descripcion</b></label>
+            <input id="descripcion" class="form-control" type="text" name="descripcion">
+        </div>
+        <div class="form-group">
+            <label for="precio"><b>precio</b></label>
+            <input id="precio" class="form-control" type="number" name="precio">
+        </div>
+        <div class="form-group">
+            <label for="imagen"><b>imagen</b></label>
+            <input id="imagen" class="form-control" type="text" name="imagen">
+        </div>
+        <button class="btn btn-success mt-3 mb-5">Enviar</button>
+    </form>
+</div>
+<!-- Final Formulario -->
+<div>
+    <h2 style="color:crimson;">Historial</h2>
+        <div class="table-responsive">
+            <table id="tabla-productos" class="table table-dark">
+                
+            </table>
+        </div>
+</div>
+    </div>
+
+    <script src="./productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div>
+    <h2 style="color:crimson;">Historial</h2>
+
+    {{#if listaProductos}}
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <tr style="color: yellow;"> <th>Nombre</th> <th>Descripcion</th> <th>Precio</th><th>Imagen</th> </tr>
+                {{#each listaProductos}}
+                <tr>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.descripcion}}</td>
+                    <td>{{this.precio}}</td>
+                    <td>
+                        <img width="30" src="{{this.imagen}}" alt="">
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    {{else}}
+        <h3 class="alert alert-warning">No se encontraron productos</h3>
+    {{/if}}
+</div>
