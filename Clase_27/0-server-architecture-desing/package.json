@@ -11,21 +11,11 @@
   "engines": {
     "node": "14.x"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/juancho0506/coderhouse-backend-nodejs.git"
-  },
   "keywords": [
     "express",
     "process",
     "environment"
   ],
-  "author": "Juan Torres",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/juancho0506/coderhouse-backend-nodejs/issues"
-  },
-  "homepage": "https://github.com/juancho0506/coderhouse-backend-nodejs#readme",
   "dependencies": {
     "commander": "^10.0.0",
     "cors": "^2.8.5",
