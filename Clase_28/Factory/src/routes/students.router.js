@@ -1,18 +1,15 @@
 import { Router } from 'express';
-//import del service para Students. (Se puede probar con el service del file system o el de mongoose)
 
-// Archivos
-// import StudentService from '../services/filesystem/students.service.js';
-
-// Mongo
-import StudentService from '../services/db/students.service.js';
+import { studentService } from '../services/factory.js';
 
 const router = Router();
-const studentService = new StudentService();
+const persistenceFactory = studentService;
+console.log(persistenceFactory);
+
 
 router.get('/', async (req, res) => {
     try {
-        let students = await studentService.getAll();
+        let students = await persistenceFactory.getAll();
         res.send(students);
     } catch (error) {
         console.error(error);
@@ -23,7 +20,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        let result = await studentService.save(req.body);
+        const studentDto = new StudentsDto(req.body);
+        let result = await studentService.save(studentDto);
         res.status(201).send(result);
     } catch (error) {
         console.error(error);

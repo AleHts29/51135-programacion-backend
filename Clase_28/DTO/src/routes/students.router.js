@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import StudentDTO from '../services/dto/student.dto.js';
 //import del service para Students. (Se puede probar con el service del file system o el de mongoose)
 
 // Archivos
@@ -23,7 +24,9 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        let result = await studentService.save(req.body);
+        let newUser = new StudentDTO(req.body);
+        let result = await studentService.save(newUser);
+        // let result = await studentService.save(req.body);
         res.status(201).send(result);
     } catch (error) {
         console.error(error);
