@@ -1,11 +1,18 @@
+/**
+*
+* Clase 00
+*
+*/
 let nombre = 'Ana'
+let numero = 12;
 nombre = 'Camila'
+
+console.log(typeof (nombre));
 
 const objeto = {
     nombre: 'Ale',
     apellido: 'Huertas'
 }
-
 
 
 let array = []
@@ -14,6 +21,12 @@ array = [true]
 console.log(typeof (objeto));
 console.log(objeto);
 
+
+/**
+*
+* Clase 01
+*
+*/
 
 // Copia por Referencia
 let obj1 = {
