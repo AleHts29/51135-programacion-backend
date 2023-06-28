@@ -26,8 +26,10 @@ console.log(test);
 // }
 // console.log(suma(2, 5))
 
-
+// refactor
 const suma = (a, b) => a + b
+
+// Tamplate String
 console.log(`El resultado de la suma es ${suma(2, 5)}`)
 
 

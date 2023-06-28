@@ -35,8 +35,8 @@ let obj1 = {
 }
 console.log(obj1);
 
-
-const obj2 = { ...obj1 }
+let obj2 = obj1
+// const obj2 = { ...obj1 }
 console.log(obj2);
 
 obj2.name = "Lucas"
