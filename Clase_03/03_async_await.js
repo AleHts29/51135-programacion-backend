@@ -17,7 +17,6 @@ const dividirConPromesa = (dividendo, divisor) => {
 // Usamos el Async y Await
 const funcionAsincronica = async (a, b) => {
     console.log('Ejecutando div por func Async()');
-
     try {
         let resultado = await dividirConPromesa(a, b)
         console.log(resultado);
@@ -28,5 +27,5 @@ const funcionAsincronica = async (a, b) => {
 
 
 // funcionAsincronica(9, 3)
-funcionAsincronica(9, 0)
+funcionAsincronica(9, 3)
 

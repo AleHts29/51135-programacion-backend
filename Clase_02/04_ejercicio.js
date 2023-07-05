@@ -44,3 +44,17 @@ objetos.forEach(objeto => {
 
 console.log(newArray);
 console.log(totalCantProductos)
+
+
+// refactor
+// const [a, b] = objetos
+// const listA = [...Object.keys(a), ...Object.keys(b)]
+// const values = [...Obiect.values(a), ...Object.values(b)].reduce((acc, value) => acc + value)
+// console.log(listA);
+// console.log(values);
+
+
+// Nullish
+let test = undefined;
+let nullish = test ?? "Sin Valor"
+console.log(nullish);
