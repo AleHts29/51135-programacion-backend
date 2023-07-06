@@ -10,39 +10,40 @@
 
 
 const fs = require("fs");
-const dirNameASync = "./files2";
-const fileNameASync = dirNameASync + "/ejemploCallback.txt";
+const dirNameAsync = "./files2";
+const fileNameAsync = dirNameAsync + "/ejemploCallback.txt";
 
 let data = "Hola Coders, estoy en un archivo! - utilizando callbacks"
 
-fs.mkdir(dirNameASync, { recursive: true }, (error) => {
+fs.mkdir(dirNameAsync, { recursive: true }, (error) => {
     if (error) throw Error('No se pudo crear el directorio base!')
 
     // Escritura
-    fs.writeFile(fileNameASync, data, (error) => {
+    fs.writeFile(fileNameAsync, data, (error) => {
         if (error) throw Error('No se pudo escribir el archivo!')
     })
 
     // lectura del archivo
-    fs.readFile(fileNameASync, 'utf-8', (error, contenido) => {
+    fs.readFile(fileNameAsync, 'utf-8', (error, contenido) => {
         if (error) throw Error("No se pudo leer el archivo!");
         console.log("Contenido del archivo:");
         console.log(contenido);
 
         // Agregamos mas contenido
-        fs.appendFile(fileNameASync, " otro ejemplo ", (error) => {
+        fs.appendFile(fileNameAsync, " otro ejemplo ", (error) => {
             if (error) throw Error("No se pudo actualizar el archivo!");
 
-            fs.readFile(fileNameASync, "utf-8", (error, contenido) => {
-                if (error) throw Error("No se pudo leer el archivo!");
-                console.log("Contenido del archivo como resultado:");
-                console.log(contenido);
+            // // lectura del archivo
+            // fs.readFile(fileNameAsync, "utf-8", (error, contenido) => {
+            //     if (error) throw Error("No se pudo leer el archivo!");
+            //     console.log("Contenido del archivo como resultado:");
+            //     console.log(contenido);
 
-                // Eliminamos el file
-                fs.unlink(fileNameSync, (error) => {
-                    if (error) throw Error("No se pudo borrar archivo.");
-                });
-            });
+            //     // // Eliminamos el file
+            //     // fs.unlink(fileNameAsync, (error) => {
+            //     //     if (error) throw Error("No se pudo borrar archivo.");
+            //     // });
+            // });
         });
     })
 })

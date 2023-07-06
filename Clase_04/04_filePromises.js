@@ -1,6 +1,6 @@
 /**
  * FS con Promesas: fs.promise
- * 
+ *
 - fs.promises.writeFile = Para escribir contenido en un archivo. Si el archivo no existe, lo crea. Si existe, lo sobreescribe.
 - fs.promises.readFile  = Para obtener el contenido de un archivo.
 - fs.promises.appendFile = Para añadir contenido a un archivo. ¡No se sobreescribe!
@@ -11,21 +11,21 @@
 // const dirNamePromesa = "./files4";
 // const fileNamePromesa = dirNamePromesa + "/ejemploFSPromesa.txt";
 
-const fsConPromesas = async (data) => {
-    // creamos el DIR
-    await fs.promises.mkdir(dirNamePromesa, { recursive: true })
+// const fsConPromesas = async (data) => {
+//     // creamos el DIR
+//     await fs.promises.mkdir(dirNamePromesa, { recursive: true })
 
 
-    // Escribimos en el archivo
-    await fs.promises.writeFile(fileNamePromesa, data)
+//     // Escribimos en el archivo
+//     await fs.promises.writeFile(fileNamePromesa, data)
 
-    // Lectura del archivo
-    let resultado = await fs.promises.readFile(fileNamePromesa, "utf-8");
-    console.log("Leyendo archivo");
-    console.log(resultado);
-}
+//     // Lectura del archivo
+//     let resultado = await fs.promises.readFile(fileNamePromesa, "utf-8");
+//     console.log("Leyendo archivo");
+//     console.log(resultado);
+// }
 
-// fsConPromesas("Hola desde promesas")
+// fsConPromesas("Hola desde promesas!!")
 
 
 
@@ -67,7 +67,7 @@ const fsConPromesasJSON = async () => {
 
 
     // guardamos en formato .json
-    await fs.promises.writeFile(fileInfoJSON, JSON.stringify(info));
+    await fs.promises.writeFile(fileInfoJSON, JSON.stringify(info, '\t'));
 
 
     // Lectura de resuldos

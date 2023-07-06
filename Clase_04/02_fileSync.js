@@ -25,8 +25,6 @@ if (!fs.existsSync(dirName)) fs.mkdirSync(dirName)
 fs.writeFileSync(fileName, "Hola Coders, estoy en un archivo!")
 
 
-
-
 if (fs.existsSync(fileName)) {
     console.log("Archivo creado con exito en la ruta: " + fs.realpathSync(fileName));
     let contenido = fs.readFileSync(fileName, "utf-8");
@@ -34,13 +32,13 @@ if (fs.existsSync(fileName)) {
     console.log("Leyendo contenido del archivo:");
     console.log(contenido);
 
-    // // Agregar mas contenido
+    // Agregar mas contenido
     fs.appendFileSync(fileName, " Mas contenido");
     contenido = fs.readFileSync(fileName, "utf-8");
     console.log("Actualizando contenido del archivo:");
     console.log(contenido);
 
-    // // Borrar
+    // Borrar
     console.log("Borrando archivo..");
     fs.unlinkSync(fileName);
 
@@ -48,5 +46,5 @@ if (fs.existsSync(fileName)) {
     fs.existsSync(fileName) ? console.log("El archivo no se pudo borrar..") : console.log("Archivo borrado");
 
 } else {
-    console.log("Error creando el archivo.");
+    console.error("Error creando el archivo.");
 }
