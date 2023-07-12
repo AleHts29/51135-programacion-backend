@@ -7,25 +7,25 @@
 - fs.promises.unlink= Es el “delete” de los archivos. eliminará todo el archivo, no sólo el contenido.
  */
 
-// const fs = require("fs");
-// const dirNamePromesa = "./files4";
-// const fileNamePromesa = dirNamePromesa + "/ejemploFSPromesa.txt";
+const fs = require("fs");
+const dirNamePromesa = "./files4";
+const fileNamePromesa = dirNamePromesa + "/ejemploFSPromesa.txt";
 
-// const fsConPromesas = async (data) => {
-//     // creamos el DIR
-//     await fs.promises.mkdir(dirNamePromesa, { recursive: true })
+const fsConPromesas = async (data) => {
+    // creamos el DIR
+    await fs.promises.mkdir(dirNamePromesa, { recursive: true })
 
 
-//     // Escribimos en el archivo
-//     await fs.promises.writeFile(fileNamePromesa, data)
+    // Escribimos en el archivo
+    await fs.promises.writeFile(fileNamePromesa, data)
 
-//     // Lectura del archivo
-//     let resultado = await fs.promises.readFile(fileNamePromesa, "utf-8");
-//     console.log("Leyendo archivo");
-//     console.log(resultado);
-// }
+    // Lectura del archivo
+    let resultado = await fs.promises.readFile(fileNamePromesa, "utf-8");
+    console.log("Leyendo archivo");
+    console.log(resultado);
+}
 
-// fsConPromesas("Hola desde promesas!!")
+fsConPromesas("Hola desde promesas!!")
 
 
 
