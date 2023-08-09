@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import {Command} from 'commander';
+import { Command } from 'commander';
 
 const program = new Command(); //Crea la instancia de comandos de commander.
 
@@ -15,12 +15,13 @@ console.log("Test Mode on?: ", program.opts().test);
 const environment = program.opts().mode;
 
 dotenv.config({
-    path:environment==="production"?"./src/config/.env.production":"./src/config/.env.development"
+    path: environment === "production" ? "./src/config/.env.production" : "./src/config/.env.development"
 });
 
 
 export default {
     port: process.env.PORT,
+    stripeSecretKey: process.env.STRIPE_APP_SECRET_KEY,
     adminName: process.env.ADMIN_NAME,
     adminPassword: process.env.ADMIN_PASSWORD,
     runTests: program.opts().test

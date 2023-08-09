@@ -10,7 +10,7 @@ const app = express();
 
 //JSON settings:
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //Declare routers:
